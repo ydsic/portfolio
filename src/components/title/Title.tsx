@@ -12,6 +12,7 @@ export default function Title() {
           <p className={textStyle}>About</p>
           <p className={textStyle}>Skills</p>
           <p className={textStyle}>Projects</p>
+          <p className={textStyle}>Education</p>
         </div>
       </div>
     </>

@@ -10,7 +10,7 @@
   --success: #22c55e;
   --error: #ef4444;
   --warning: #eab308;
-  --border: #dcdcdc;
+  --border: #3a3a3a;
   --button: #2563eb;
   --button-hover: #1d4ed8;
 }
@@ -27,7 +27,7 @@
   --success: #4ade80;
   --error: #f87171;
   --warning: #facc15;
-  --border: #3a3a3a;
+  --border: #dcdcdc;
   --button: #60a5fa;
   --button-hover: #3b82f6;
 }

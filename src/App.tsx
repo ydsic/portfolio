@@ -1,14 +1,20 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import FloatingButton from "./components/floatingbutton/FloatingButton";
 import Title from "./components/title/Title";
 import { useThemeStore } from "./store/darkModeStore";
+import Loader from "./components/loader/Loader";
+import Content from "./components/contents/Contents";
 
 function App() {
+  const [initialLoading, setInitialLoading] = useState(false);
   const { isDarkMode } = useThemeStore();
 
   useEffect(() => {
-    console.log("첫 로딩애니메이션");
+    const timer = setTimeout(() => {
+      setInitialLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -17,8 +23,15 @@ function App() {
         isDarkMode ? "dark_theme" : "light_theme"
       } bg-[var(--bg)] w-screen h-screen`}
     >
-      <Title />
-      <FloatingButton />
+      {initialLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <Title />
+          <Content />
+          <FloatingButton />
+        </>
+      )}
     </div>
   );
 }
