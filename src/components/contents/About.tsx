@@ -1,8 +1,10 @@
 import { useState } from "react";
 import TypingText from "./typingtext/TypingText";
 import TypingTextList from "./typingtext/TypingTextList";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
-export default function Profile() {
+export default function About() {
   const [showTypingList, setShowTypingList] = useState(false);
 
   return (
@@ -11,15 +13,29 @@ export default function Profile() {
         <img src="./me/me.png" className="w-[250px]" />
       </div>
       <div className="m-auto w-[80%]">
-        <h2 className="text-[var(--main-text)] text-2xl mb-[20px]">About</h2>
-        <div
-          onMouseOver={() => setShowTypingList(true)}
-          onMouseLeave={() => setShowTypingList(false)}
-          className="flex mb-[0px] border-b-2 border-[var(--border)]"
-        >
-          <h3 className="text-[var(--main-text)] text-2xl">저는</h3>
-          <TypingText />
-          <h3 className="text-[var(--main-text)] text-2xl">개발자 입니다.</h3>
+        <div>
+          <h2 className="text-[var(--main-text)] text-2xl mb-[20px]">About</h2>
+          <div
+            className="flex justify-between w-[100%] border-b-2 border-[var(--border)]"
+            onMouseOver={() => setShowTypingList(true)}
+            onMouseLeave={() => setShowTypingList(false)}
+          >
+            <div className="flex mb-[0px] w-[100%]">
+              <h3 className="text-[var(--main-text)] text-2xl">저는</h3>
+              <TypingText />
+              <h3 className="text-[var(--main-text)] text-2xl">
+                개발자 입니다.
+              </h3>
+            </div>
+            <div>
+              <FontAwesomeIcon
+                icon={faCaretDown}
+                className="mr-5"
+                size="xl"
+                style={{ color: "#ffffff" }}
+              />
+            </div>
+          </div>
         </div>
         <TypingTextList showTypingList={showTypingList} />
 

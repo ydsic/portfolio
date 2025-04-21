@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 export default function Contact() {
@@ -11,13 +11,9 @@ export default function Contact() {
   const textToCopy = "ydsic99@gmail.com";
 
   const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(textToCopy);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
-    } catch (err) {
-      console.error("클립보드 복사 실패:", err);
-    }
+    await navigator.clipboard.writeText(textToCopy);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1000);
   };
 
   return (
@@ -29,7 +25,7 @@ export default function Contact() {
         onClick={copyEmail}
       >
         <FontAwesomeIcon
-          icon={faEnvelope}
+          icon={copied ? faEnvelopeOpen : faEnvelope}
           size="xl"
           style={{ color: "#ffffff" }}
         />

@@ -19,6 +19,7 @@ export default function UpScroll() {
           icon={faChevronUp}
           size="xl"
           style={{ color: "#ffffff" }}
+          bounce={mouseOver}
         />
       </button>
       {mouseOver && (

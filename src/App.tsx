@@ -21,7 +21,7 @@ function App() {
     <div
       className={`${
         isDarkMode ? "dark_theme" : "light_theme"
-      } bg-[var(--bg)] w-screen h-screen`}
+      } bg-[var(--bg)] w-screen h-screen overflow-y-auto`}
     >
       {initialLoading ? (
         <Loader />

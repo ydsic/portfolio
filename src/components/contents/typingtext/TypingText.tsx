@@ -35,10 +35,10 @@ export default function TypingText() {
     const isEmpty = state.displayText === "";
 
     let timeout: ReturnType<typeof setTimeout>;
-    let speed = 80;
+    let speed = 100;
 
     if (!state.isDeleting && !fullTextTyped) {
-      speed = 80;
+      speed = 100;
       timeout = setTimeout(() => {
         setState((prev) => ({
           ...prev,
@@ -51,7 +51,7 @@ export default function TypingText() {
         setState((prev) => ({ ...prev, isDeleting: true }));
       }, speed);
     } else if (state.isDeleting && !isEmpty) {
-      speed = 35;
+      speed = 50;
       timeout = setTimeout(() => {
         setState((prev) => ({
           ...prev,

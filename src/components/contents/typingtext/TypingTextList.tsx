@@ -38,7 +38,7 @@ export default function TypingTextList({
       {TypingCommentList.map((data, idx) => (
         <div key={idx} className="p-2">
           {data}
-          <hr />
+          <hr className="mt-0.5" />
         </div>
       ))}
     </div>

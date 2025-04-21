@@ -1,0 +1,14 @@
+.iconmoveup {
+  animation: iconmoveup 0.5s ease-out;
+}
+
+@keyframes iconmoveup {
+  0% {
+    transform: translate(0, 50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
