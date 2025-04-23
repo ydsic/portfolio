@@ -2,7 +2,7 @@ export default function Title() {
   const textStyle = `text-[var(--main-text)] text-[20px]`;
   return (
     <>
-      <div className="w-screen h-[8vh] flex justify-between items-center">
+      <div className="fixed w-screen h-[8vh] flex justify-between items-center">
         <div className="ml-52">
           <p className="text-[var(--main-text)] text-[24px] font-[Poppins] font-[800]">
             Yedo Portfolio

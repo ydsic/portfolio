@@ -8,56 +8,53 @@ export default function About() {
   const [showTypingList, setShowTypingList] = useState(false);
 
   return (
-    <div className="flex w-[75%] m-auto gap-12">
-      <div>
-        <img src="./me/me.png" className="w-[250px]" />
+    <section className="w-full max-w-6xl mx-auto mt-30 px-6 py-16 flex flex-col md:flex-row gap-12 items-start">
+      <div className="flex-shrink-0">
+        <img
+          src="/me/me.png"
+          alt="프로필 이미지"
+          className="w-[220px] md:w-[250px] rounded-2xl shadow-lg object-cover"
+        />
       </div>
-      <div className="m-auto w-[80%]">
-        <div>
-          <h2 className="text-[var(--main-text)] text-2xl mb-[20px]">About</h2>
-          <div
-            className="flex justify-between w-[100%] border-b-2 border-[var(--border)]"
-            onMouseOver={() => setShowTypingList(true)}
-            onMouseLeave={() => setShowTypingList(false)}
-          >
-            <div className="flex mb-[0px] w-[100%]">
-              <h3 className="text-[var(--main-text)] text-2xl">저는</h3>
-              <TypingText />
-              <h3 className="text-[var(--main-text)] text-2xl">
-                개발자 입니다.
-              </h3>
-            </div>
-            <div>
-              <FontAwesomeIcon
-                icon={faCaretDown}
-                className="mr-5"
-                size="xl"
-                style={{ color: "#ffffff" }}
-              />
-            </div>
+
+      <div className="flex-1">
+        <h2 className="text-4xl font-bold text-[var(--main-text)] mb-4">
+          About
+        </h2>
+
+        <div
+          className="flex justify-between items-center border-b border-[var(--border)] pb-2 mb-6 cursor-pointer"
+          onMouseOver={() => setShowTypingList(true)}
+          onMouseLeave={() => setShowTypingList(false)}
+          onClick={() => setShowTypingList((prev) => !prev)}
+        >
+          <div className="flex flex-wrap items-baseline gap-2 text-2xl text-[var(--main-text)]">
+            <span>저는</span>
+            <TypingText />
+            <span>개발자입니다.</span>
           </div>
+          <FontAwesomeIcon
+            icon={faCaretDown}
+            className="text-white text-xl mr-3"
+          />
         </div>
+
         <TypingTextList showTypingList={showTypingList} />
 
-        <p className="text-[var(--main-text)] text-[18px] leading-[35px] mt-[10px] ">
-          안녕하세요.
-          <br />
-          프론트엔드 개발자 이예도입니다.
-          <br />
-          프론트엔드는 다양한 개발자 직군 중에서 협업과 소통을 가장 많이 하는
-          직군이라 생각합니다.
-          <br />
-          또한 신입 개발자에게 요구하는 역량 중 아키텍쳐를 잘 짜는 것 뿐만
-          아니라
-          <br />
-          소통, 협업, 문서화, 학습 능력, 프로젝트 경험 등 다양한 부분에 있어서
-          꽉 찬 다각형 모양을 이룬다면
-          <br />
-          정말 손색 없는 신입 프론트엔드 개발자라고 생각하며 열심히
-          달려왔습니다.
-        </p>
-        <p></p>
+        <article className="text-[var(--main-text)] text-lg leading-relaxed space-y-4">
+          <p>안녕하세요. 프론트엔드 개발자 이예도입니다.</p>
+          <p>
+            프론트엔드는 다양한 개발자 직군 중에서 협업과 소통을 가장 많이 하는
+            직군이라 생각합니다. <br />
+            또한 신입 개발자에게 요구하는 역량 중 아키텍처를 잘 짜는 것뿐만
+            아니라, <br />
+            소통, 협업, 문서화, 학습 능력, 프로젝트 경험 등 다양한 부분에서 꽉
+            찬 다각형 모양을 이룬다면 <br />
+            정말 손색 없는 신입 프론트엔드 개발자라고 생각하며 열심히
+            달려왔습니다.
+          </p>
+        </article>
       </div>
-    </div>
+    </section>
   );
 }
