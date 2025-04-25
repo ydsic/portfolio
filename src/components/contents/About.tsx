@@ -16,7 +16,7 @@ export default function About() {
         <img
           src="/me/me.png"
           alt="프로필 이미지"
-          className="w-[220px] md:w-[250px] rounded-2xl shadow-lg object-cover"
+          className="md:w-[280px] rounded-2xl shadow-lg object-cover"
         />
       </div>
 
@@ -47,14 +47,21 @@ export default function About() {
         <article className="mt-[20px] text-[var(--main-text)] text-lg leading-relaxed space-y-4">
           <p>안녕하세요. 프론트엔드 개발자 이예도입니다.</p>
           <p>
-            프론트엔드는 다양한 개발자 직군 중에서 협업과 소통을 가장 많이 하는
-            직군이라 생각합니다. <br />
-            또한 신입 개발자에게 요구하는 역량 중 아키텍처를 잘 짜는 것뿐만
-            아니라, <br />
-            소통, 협업, 문서화, 학습 능력, 프로젝트 경험 등 다양한 부분에서 꽉
-            찬 다각형 모양을 이룬다면 <br />
-            정말 손색 없는 신입 프론트엔드 개발자라고 생각하며 열심히
-            달려왔습니다.
+            저는 프론트엔드가 단순히 화면을 만드는 일을 넘어서, 다양한 사람들과
+            협업하고 소통하는 직무라고 생각합니다.
+          </p>
+          <p>신입 개발자에게 필요한 역량은 단지 기술력에 그치지 않습니다.</p>
+          <p className="mb-0">
+            아키텍처 설계 능력은 물론이고, 협업, 문서화, 학습 능력, 프로젝트
+            경험까지
+          </p>
+          <p>
+            여러 영역에서 다각형처럼 균형 잡힌 성장을 이루는 것이 중요하다고
+            생각합니다.
+          </p>
+          <p>
+            이제는 제가 쌓아온 이 다각형을 바탕으로 팀과 함께 가치 있는 결과를
+            만들어내고 싶습니다.
           </p>
         </article>
       </div>
