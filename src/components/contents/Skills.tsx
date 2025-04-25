@@ -19,15 +19,8 @@ export default function Skills() {
       items: ["Vercel", "Netlify"],
     },
     {
-      category: "협업 및 문서화",
-      items: [
-        "Notion (기획 문서)",
-        "Jira (태스크 관리)",
-        "Slack (팀 커뮤니케이션)",
-        "Figma (디자인 시안 해석 및 UI 구현 협업)",
-        "Zoom (화상 회의)",
-        "Discord (화상 회의 및 팀 커뮤니케이션)",
-      ],
+      category: "Collaboration & Documentation",
+      items: ["Notion", "Jira", "Slack", "Figma", "Zoom", "Discord"],
     },
   ];
 

@@ -18,8 +18,8 @@ export default function TypingTextList({
     return () => clearTimeout(timeout);
   }, []);
 
-  const baseStyle = `absolute ml-[25px] text-[18px] p-3 shadow-lg bg-[var(--sub-bg2)] text-[var(--main-text)] transition-all duration-500 ease-in-out`;
-  const hiddenStyle = `opacity-0 translate-y-4 pointer-events-none`;
+  const baseStyle = `absolute ml-[25px] text-[18px] p-2 rounded-[10px] shadow-lg bg-[var(--sub-bg2)] text-[var(--main-text)] transition-all duration-500 ease-in-out`;
+  const hiddenStyle = `opacity-0 translate-y-3 pointer-events-none`;
   const visibleStyle = `opacity-100 translate-y-0`;
 
   return (

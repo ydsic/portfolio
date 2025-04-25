@@ -73,7 +73,7 @@ export default function TypingText() {
   }, [state, isStopped]);
 
   return (
-    <h3 className="flex text-[var(--primary)] text-2xl mx-[7px]">
+    <h3 className="flex text-[var(--primary)] text-[22px]">
       {state.displayText}
     </h3>
   );

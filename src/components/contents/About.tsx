@@ -23,12 +23,12 @@ export default function About() {
         </h2>
 
         <div
-          className="flex justify-between items-center border-b border-[var(--border)] pb-2 mb-6 cursor-pointer"
+          className="flex justify-between items-center border-b border-[var(--border)] pb-2 mb-2 cursor-pointer"
           onMouseOver={() => setShowTypingList(true)}
           onMouseLeave={() => setShowTypingList(false)}
           onClick={() => setShowTypingList((prev) => !prev)}
         >
-          <div className="flex flex-wrap items-baseline gap-2 text-2xl text-[var(--main-text)]">
+          <div className="flex flex-wrap items-baseline gap-2 text-[22px] text-[var(--main-text)]">
             <span>저는</span>
             <TypingText />
             <span>개발자입니다.</span>
@@ -41,7 +41,7 @@ export default function About() {
 
         <TypingTextList showTypingList={showTypingList} />
 
-        <article className="text-[var(--main-text)] text-lg leading-relaxed space-y-4">
+        <article className="mt-[20px] text-[var(--main-text)] text-lg leading-relaxed space-y-4">
           <p>안녕하세요. 프론트엔드 개발자 이예도입니다.</p>
           <p>
             프론트엔드는 다양한 개발자 직군 중에서 협업과 소통을 가장 많이 하는

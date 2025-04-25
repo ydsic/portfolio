@@ -1,7 +1,9 @@
 .light_theme {
   --bg: #ffffff;
+  --title-bg: #ffffffaa;
   --sub-bg: #f9f9f9;
   --sub-bg2: #f0f0f0;
+  --hover-bg: #e5e5e5;
   --overlay-bg: #00000066;
   --alert-bg: #dbeafe;
   --main-text: #1a1a1a;
@@ -17,8 +19,10 @@
 
 .dark_theme {
   --bg: #121212;
+  --title-bg: #121212aa;
   --sub-bg: #1e1e1e;
   --sub-bg2: #2a2a2a;
+  --hover-bg: #3a3a3a;
   --overlay-bg: #ffffff1a;
   --alert-bg: #1e3a8a;
   --main-text: #e0e0e0;
@@ -30,4 +34,13 @@
   --border: #dcdcdc;
   --button: #60a5fa;
   --button-hover: #3b82f6;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE, Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
