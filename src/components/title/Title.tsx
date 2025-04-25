@@ -10,25 +10,38 @@ export default function Title() {
     <>
       <div className="fixed w-screen h-[8vh] flex justify-between items-center bg-[var(--title-bg)] backdrop-blur-sm z-50">
         <div className="ml-52">
-          <p className="text-[var(--main-text)] text-[24px] font-[Poppins] font-[800]">
+          <p className="text-[var(--main-text)] text-[24px] font-[Poppins] font-[700]">
             Yedo Portfolio
           </p>
         </div>
+
         <div className="flex gap-15 mr-52">
-          {["about", "skills", "projects", "education"].map((section) => (
-            <Link
-              key={section}
-              to={section}
-              spy={true}
-              smooth={true}
-              duration={700}
-              offset={-30}
-              className={linkStyle}
-              activeClass={activeStyle}
-            >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
-            </Link>
-          ))}
+          {["about", "skills", "projects", "education", "blog"].map((section) =>
+            section === "blog" ? (
+              <a
+                key={section}
+                href="https://blog.yedo.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkStyle}
+              >
+                Blog
+              </a>
+            ) : (
+              <Link
+                key={section}
+                to={section}
+                spy={true}
+                smooth={true}
+                duration={700}
+                offset={-30}
+                className={linkStyle}
+                activeClass={activeStyle}
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </Link>
+            )
+          )}
         </div>
       </div>
       <ScrollProgressBar />
