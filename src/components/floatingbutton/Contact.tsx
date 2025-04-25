@@ -31,7 +31,7 @@ export default function Contact() {
         />
       </button>
       {mouseOver && (
-        <div className="flex flex-col absolute justify-center items-center bottom-[140px] right-[130px] w-[180px] py-1.5 bg-[var(--sub-bg2)]">
+        <div className="flex flex-col fixed justify-center items-center bottom-[140px] right-[130px] w-[180px] py-1.5 bg-[var(--sub-bg2)]">
           <p className="text-[var(--main-text)]">ydsic99@gmail.com</p>
           <p
             className={`${

@@ -38,7 +38,7 @@ export default function DarkMod() {
       </button>
 
       {mouseOver && (
-        <div className="flex absolute justify-center items-center bottom-[70px] right-[130px] w-[100px] py-1.5 bg-[var(--sub-bg2)]">
+        <div className="flex fixed justify-center items-center bottom-[70px] right-[130px] w-[100px] py-1.5 bg-[var(--sub-bg2)]">
           <p className="text-[var(--main-text)]">모드전환</p>
         </div>
       )}
