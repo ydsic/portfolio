@@ -63,7 +63,7 @@ export default function Projects() {
           <button
             onClick={scrollLeft}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 
-             bg-[var(--overlay-bg)] p-2 rounded-full shadow border border-[var(--sub-bg2)]
+            bg-[var(--sub-bg2)] p-2 rounded-full shadow border border-[var(--border)]
              hover:bg-[var(--hover-bg)] hover:scale-105 hover:shadow-lg 
              transition-all duration-300 transform"
           >
