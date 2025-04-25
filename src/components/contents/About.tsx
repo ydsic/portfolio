@@ -8,7 +8,10 @@ export default function About() {
   const [showTypingList, setShowTypingList] = useState(false);
 
   return (
-    <section className="w-full max-w-6xl mx-auto mt-30 px-6 py-16 flex flex-col md:flex-row gap-12 items-start">
+    <section
+      id="about"
+      className="w-full max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row gap-12 items-start"
+    >
       <div className="flex-shrink-0">
         <img
           src="/me/me.png"

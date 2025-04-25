@@ -6,7 +6,7 @@ import "./DarkModStyle.css";
 
 export default function DarkMod() {
   const { isDarkMode, toggleTheme } = useThemeStore();
-  const buttonStyle = `flex justify-center items-center absolute w-[60px]
+  const buttonStyle = `flex justify-center items-center fixed w-[60px]
     h-[60px] right-[60px] rounded-full bg-[var(--button)] hover:bg-[var(--button-hover)] 
     shadow-lg shadow-black/60 cursor-pointer overflow-hidden`;
   const [mouseOver, setMouseOver] = useState(false);

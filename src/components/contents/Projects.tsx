@@ -50,7 +50,10 @@ export default function Projects() {
   };
 
   return (
-    <section className="w-full max-w-6xl mx-auto px-6 py-16 text-[var(--main-text)] hide-scrollbar">
+    <section
+      id="projects"
+      className="w-full max-w-6xl mx-auto px-6 py-16 text-[var(--main-text)] hide-scrollbar"
+    >
       <h2 className="text-4xl font-bold mb-5 border-b border-[var(--border)] pb-2">
         Projects
       </h2>
@@ -60,7 +63,7 @@ export default function Projects() {
           <button
             onClick={scrollLeft}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 
-             bg-[var(--overlay-bg)] p-2 rounded-full shadow border border-[var(--border)]
+             bg-[var(--overlay-bg)] p-2 rounded-full shadow border border-[var(--sub-bg2)]
              hover:bg-[var(--hover-bg)] hover:scale-105 hover:shadow-lg 
              transition-all duration-300 transform"
           >
@@ -84,7 +87,7 @@ export default function Projects() {
         {canScrollRight && (
           <button
             onClick={scrollRight}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--overlay-bg)] 
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--sub-bg2)] 
             p-2 rounded-full shadow border border-[var(--border)]
             hover:bg-[var(--hover-bg)] hover:scale-105 hover:shadow-lg 
             transition-all duration-300 transform"

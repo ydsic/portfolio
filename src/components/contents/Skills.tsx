@@ -25,7 +25,10 @@ export default function Skills() {
   ];
 
   return (
-    <section className="w-full max-w-6xl mx-auto px-6 py-16 text-[var(--main-text)]">
+    <section
+      id="skills"
+      className="w-full max-w-6xl mx-auto px-6 py-16 text-[var(--main-text)]"
+    >
       <h2 className="text-4xl font-bold mb-10 border-b border-[var(--border)] pb-2">
         Skills
       </h2>
