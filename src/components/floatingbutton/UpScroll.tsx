@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { Link } from "react-scroll";
 
 export default function UpScroll() {
   const buttonStyle = `flex justify-center items-center fixed w-[60px]
@@ -10,10 +11,14 @@ export default function UpScroll() {
 
   return (
     <>
-      <button
-        className={`${buttonStyle} bottom-[220px] `}
+      <Link
+        to="about"
+        smooth={true}
+        duration={700}
+        offset={-30}
         onMouseOver={() => setMouseOver(true)}
         onMouseLeave={() => setMouseOver(false)}
+        className={`${buttonStyle} bottom-[220px]`}
       >
         <FontAwesomeIcon
           icon={faChevronUp}
@@ -21,7 +26,7 @@ export default function UpScroll() {
           style={{ color: "#ffffff" }}
           bounce={mouseOver}
         />
-      </button>
+      </Link>
       {mouseOver && (
         <div className="flex absolute justify-center items-center bottom-[230px] right-[130px] w-[100px] py-1.5 bg-[var(--sub-bg2)]">
           <p className="text-[var(--main-text)]">위로가기</p>

@@ -1,5 +1,4 @@
 import FortfolioImg from "../../../assets/projectimg/fortfolio.png";
-import { skillIcons } from "../../../constants/skillIcons";
 
 export const projects = [
   {
