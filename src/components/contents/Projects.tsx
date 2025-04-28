@@ -1,101 +1,46 @@
-import { useEffect, useRef, useState } from "react";
+// Projects.tsx
+import { useState } from "react";
 import "../../App.css";
 import ProjectCard from "./projectCard/ProjectCard";
 import { projects } from "./projectCard/projectsData";
-
 import PortfolioContents from "./projectCard/projectdetail/portfolio";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFolderOpen } from "@fortawesome/free-solid-svg-icons";
 
 export default function Projects() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const scrollByAmount = 400;
-
-  const updateScrollButtons = () => {
-    const el = scrollRef.current;
-    if (el) {
-      setCanScrollLeft(el.scrollLeft > 0);
-      setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth);
-    }
-  };
-
-  const scrollLeft = () => {
-    scrollRef.current?.scrollBy({ left: -scrollByAmount, behavior: "smooth" });
-  };
-
-  const scrollRight = () => {
-    scrollRef.current?.scrollBy({ left: scrollByAmount, behavior: "smooth" });
-  };
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    updateScrollButtons();
-    el.addEventListener("scroll", updateScrollButtons);
-
-    return () => el.removeEventListener("scroll", updateScrollButtons);
-  }, []);
+  const closeDetail = () => setSelectedIndex(null);
 
   const renderProjectDetail = () => {
-    const close = () => setSelectedIndex(null);
-
+    if (selectedIndex === null) return null;
     switch (selectedIndex) {
       case 0:
-        return <PortfolioContents onClose={close} />;
-      // case 1:
-      //   return <ProjectDetail />;
+        return <PortfolioContents onClose={closeDetail} />;
+      default:
+        return null;
     }
   };
 
   return (
     <section
       id="projects"
-      className="w-full max-w-6xl mx-auto px-6 py-16 text-[var(--main-text)] hide-scrollbar"
+      className="w-full max-w-6xl mx-auto px-6 py-16 text-[var(--main-text)]"
     >
-      <h2 className="text-4xl font-bold mb-5 border-b border-[var(--border)] pb-2">
-        Projects
-      </h2>
-
-      <div className="relative">
-        {canScrollLeft && (
-          <button
-            onClick={scrollLeft}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 
-            bg-[var(--sub-bg2)] p-2 rounded-full shadow border border-[var(--border)]
-             hover:bg-[var(--hover-bg)] hover:scale-105 hover:shadow-lg 
-             transition-all duration-300 transform"
-          >
-            ◀
-          </button>
-        )}
-
-        <div
-          ref={scrollRef}
-          className="flex gap-5 overflow-x-auto px-5 py-5 scroll-smooth hide-scrollbar"
-        >
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              {...project}
-              onClick={() => setSelectedIndex(index)}
-            />
-          ))}
-        </div>
-
-        {canScrollRight && (
-          <button
-            onClick={scrollRight}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--sub-bg2)] 
-            p-2 rounded-full shadow border border-[var(--border)]
-            hover:bg-[var(--hover-bg)] hover:scale-105 hover:shadow-lg 
-            transition-all duration-300 transform"
-          >
-            ▶
-          </button>
-        )}
+      <div className="flex items-center gap-3 mb-8 border-b border-[var(--border)] pb-2">
+        <FontAwesomeIcon icon={faFolderOpen} size="2x" className="ml-2" />
+        <h2 className="text-4xl font-bold">Projects</h2>
       </div>
+
+      <div className="flex flex-col gap-5 items-center">
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            {...project}
+            onClick={() => setSelectedIndex(index)}
+          />
+        ))}
+      </div>
+
       {renderProjectDetail()}
     </section>
   );

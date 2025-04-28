@@ -16,6 +16,12 @@ import slackIcon from "../assets/skillsimg/slack.svg";
 import figmaIcon from "../assets/skillsimg/figma.svg";
 import zoomIcon from "../assets/skillsimg/zoom.svg";
 import discordIcon from "../assets/skillsimg/discord.svg";
+import raspberrypiIcon from "../assets/skillsimg/raspberrypi.svg";
+import unixIcon from "../assets/skillsimg/unix.svg";
+import postgresqlIcon from "../assets/skillsimg/postgresql.svg";
+import jenkinsIcon from "../assets/skillsimg/jenkins.svg";
+import gitlabIcon from "../assets/skillsimg/gitlab.svg";
+import nodejsIcon from "../assets/skillsimg/nodejs.svg";
 
 export const skillIcons: Record<string, string> = {
   React: reactIcon,
@@ -26,7 +32,7 @@ export const skillIcons: Record<string, string> = {
   HTML: htmlIcon,
   CSS: cssIcon,
   TailwindCSS: tailwindIcon,
-  GitHub: githubIcon,
+  Github: githubIcon,
   Docker: dockerIcon,
   Vercel: vercelIcon,
   Netlify: netlifyIcon,
@@ -36,4 +42,10 @@ export const skillIcons: Record<string, string> = {
   Figma: figmaIcon,
   Zoom: zoomIcon,
   Discord: discordIcon,
+  "Raspberry-Pi": raspberrypiIcon,
+  Unix: unixIcon,
+  PostgreSQL: postgresqlIcon,
+  Jenkins: jenkinsIcon,
+  Gitlab: gitlabIcon,
+  "Node.js": nodejsIcon,
 };

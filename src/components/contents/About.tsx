@@ -2,7 +2,7 @@ import { useState } from "react";
 import TypingText from "./typingtext/TypingText";
 import TypingTextList from "./typingtext/TypingTextList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faCaretDown, faDatabase } from "@fortawesome/free-solid-svg-icons";
 
 export default function About() {
   const [showTypingList, setShowTypingList] = useState(false);
@@ -21,9 +21,10 @@ export default function About() {
       </div>
 
       <div className="flex-1">
-        <h2 className="text-4xl font-bold text-[var(--main-text)] mb-4">
-          About
-        </h2>
+        <div className="flex items-center gap-3 mb-5 text-[var(--main-text)]">
+          <FontAwesomeIcon icon={faDatabase} size="2x" />
+          <h2 className="text-4xl font-bold">About</h2>
+        </div>
 
         <div
           className="flex justify-between items-center border-b border-[var(--border)] pb-2 mb-2 cursor-pointer"

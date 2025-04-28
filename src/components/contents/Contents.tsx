@@ -1,4 +1,3 @@
-import Education from "./Education";
 import About from "./About";
 import Projects from "./Projects";
 import Skills from "./Skills";
@@ -10,7 +9,6 @@ export default function Contents() {
         <About />
         <Skills />
         <Projects />
-        <Education />
       </div>
     </>
   );

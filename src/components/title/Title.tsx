@@ -16,7 +16,7 @@ export default function Title() {
         </div>
 
         <div className="flex gap-15 mr-52">
-          {["about", "skills", "projects", "education", "blog"].map((section) =>
+          {["about", "skills", "projects", "blog"].map((section) =>
             section === "blog" ? (
               <a
                 key={section}

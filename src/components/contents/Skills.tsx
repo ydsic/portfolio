@@ -1,4 +1,6 @@
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 import { skillIcons } from "../../constants/skillIcons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Skills() {
   const skills = [
@@ -8,11 +10,11 @@ export default function Skills() {
     },
     {
       category: "Styling",
-      items: ["HTML", "CSS", "TailwindCSS"],
+      items: ["CSS", "TailwindCSS"],
     },
     {
       category: "Deployment & DevOps",
-      items: ["GitHub", "Docker"],
+      items: ["Github", "Docker"],
     },
     {
       category: "Hosting",
@@ -20,7 +22,7 @@ export default function Skills() {
     },
     {
       category: "Collaboration & Documentation",
-      items: ["Notion", "Jira", "Slack", "Figma", "Zoom", "Discord"],
+      items: ["Notion", "Jira", "Slack", "Figma"],
     },
   ];
 
@@ -29,11 +31,12 @@ export default function Skills() {
       id="skills"
       className="w-full max-w-6xl mx-auto px-6 py-16 text-[var(--main-text)]"
     >
-      <h2 className="text-4xl font-bold mb-10 border-b border-[var(--border)] pb-2">
-        Skills
-      </h2>
+      <div className="flex items-center gap-3 mb-8 border-b border-[var(--border)] pb-2">
+        <FontAwesomeIcon icon={faCode} size="2x" className="ml-2" />
+        <h2 className="text-4xl font-bold">Skills</h2>
+      </div>
 
-      <div className="space-y-10">
+      <div className="space-y-10 ml-3">
         {skills.map(({ category, items }) => (
           <div key={category}>
             <h3 className="text-2xl font-semibold mb-4">{category}</h3>
