@@ -1,11 +1,12 @@
+type btnStyleType = {
+  buttonStyle: string;
+};
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-export default function Contact() {
-  const buttonStyle = `flex justify-center items-center fixed w-[60px]
-    h-[60px] right-[60px] rounded-full bg-[var(--button)] hover:bg-[var(--button-hover)] 
-    shadow-lg shadow-black/60 cursor-pointer`;
+export default function Contact({ buttonStyle }: btnStyleType) {
   const [mouseOver, setMouseOver] = useState(false);
   const [copied, setCopied] = useState(false);
   const textToCopy = "ydsic99@gmail.com";
@@ -19,7 +20,7 @@ export default function Contact() {
   return (
     <>
       <button
-        className={`${buttonStyle} bottom-[140px]`}
+        className={`${buttonStyle} bottom-[140px] hidden md:flex`}
         onMouseOver={() => setMouseOver(true)}
         onMouseLeave={() => setMouseOver(false)}
         onClick={copyEmail}

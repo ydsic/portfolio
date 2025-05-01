@@ -1,0 +1,9 @@
+@media (max-width: 767px) {
+  .displayNone {
+    display: none;
+  }
+
+  .displayBlock {
+    display: flex;
+  }
+}

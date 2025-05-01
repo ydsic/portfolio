@@ -14,7 +14,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="mx-auto px-6 py-16 flex flex-row gap-12 items-start about-section"
+      className="max-w-6xl mx-auto px-6 py-16 flex flex-row gap-12 items-start about-section"
     >
       {/* 프로필 이미지 */}
       <div className="flex-shrink-0">
@@ -51,7 +51,7 @@ export default function About() {
 
         <TypingTextList showTypingList={showTypingList} />
 
-        <article className="mt-[20px] text-[var(--main-text)] text-[16px] xs:text-[20px] md:text-[22px] leading-relaxed space-y-4">
+        <article className="mt-[20px] text-[var(--main-text)] text-[16px] xs:text-[18px] md:text-[20px] leading-relaxed space-y-4">
           <p>안녕하세요. 프론트엔드 개발자 이예도입니다.</p>
           <p>
             저는 프론트엔드가 단순히 화면을 만드는 일을 넘어서, 다양한 사람들과

@@ -1,0 +1,76 @@
+/* 1280px 이상일 때는 Tailwind 스타일 유지 (기본) */
+
+@media (max-width: 1279px) {
+  .projectCardDiv {
+    width: 95%;
+  }
+
+  .projectCardDiv h3 {
+    font-size: 20px;
+  }
+
+  .projectCardDiv p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .projectCardDiv {
+    width: 100%;
+    padding-inline: 16px;
+    padding-block: 10px;
+  }
+
+  .projectCardDiv h3 {
+    font-size: 18px;
+  }
+
+  .projectCardDiv p {
+    font-size: 13px;
+  }
+
+  .projectCardDiv .projectCardImages {
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+  }
+
+  .projectCardDiv .projectCardImages img {
+    width: 100%;
+    height: auto;
+  }
+
+  .useSkill_style {
+    font-size: 14px;
+  }
+
+  .useSkill_img {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 479px) {
+  .projectCardDiv {
+    padding-inline: 12px;
+    padding-block: 12px;
+  }
+
+  .projectCardDiv h3 {
+    font-size: 16px;
+  }
+
+  .projectCardDiv p {
+    font-size: 12px;
+    -webkit-line-clamp: 4;
+  }
+
+  .useSkill_style {
+    font-size: 12px;
+  }
+
+  .useSkill_img {
+    width: 12px;
+    height: 12px;
+  }
+}

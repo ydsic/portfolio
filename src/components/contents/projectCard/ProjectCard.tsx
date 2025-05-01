@@ -32,23 +32,18 @@ export default function ProjectCard({
         bg-[var(--sub-bg2)] bg-opacity-80 backdrop-blur-sm
         border-2 border-[var(--border)]
         rounded-2xl p-6 flex flex-col justify-between cursor-pointer
-
-        transform transition
-        duration-300 ease-in-out
-    
-        hover:border-[var(--button-hover)]
-        hover:shadow-lg
-        hover:scale-103
-
+        transform transition duration-300 ease-in-out
+        hover:border-[var(--button-hover)] hover:shadow-lg hover:scale-103
         projectCardDiv
       "
     >
       <div>
-        <div className="flex justify-between">
+        {/* 상단 정보: 프로젝트 타입과 날짜 */}
+        <div className="flex justify-between items-center mb-4">
           <div className="flex items-center gap-2">
             <FontAwesomeIcon
               size="lg"
-              icon={projecttype == "Personal" ? faUser : faUsers}
+              icon={projecttype === "Personal" ? faUser : faUsers}
             />
             <p className="text-xl">{projecttype}</p>
           </div>
@@ -63,30 +58,38 @@ export default function ProjectCard({
           </div>
         </div>
 
+        {/* 이미지 */}
         {image1 && image2 && (
-          <div className="flex gap-6 h-60 justify-center my-2">
+          <div className="flex gap-6 h-60 justify-center my-2 projectCardImages">
             <img src={image1} alt={title} className="object-cover rounded-lg" />
-
-            <img src={image2} alt={title} className="object-cover rounded-l" />
+            <img
+              src={image2}
+              alt={title}
+              className="object-cover rounded-lg hidden md:block"
+            />
           </div>
         )}
+
+        {/* 타이틀 + 설명 */}
         <h3 className="text-2xl font-semibold mb-2">{title}</h3>
         <p className="text-base text-[var(--main-text)] line-clamp-3 mb-4">
           {description}
         </p>
       </div>
+
+      {/* 기술 스택 */}
       <div className="flex flex-wrap gap-2">
         {skills.map((skill) =>
           skillIcons[skill] ? (
             <span
               key={skill}
-              className="flex items-center bg-[var(--sub-bg)] text-[var(--sub-text)] text-[15px] rounded-full px-2.5 py-1.5"
+              className="flex items-center bg-[var(--sub-bg)] text-[var(--sub-text)] text-[15px] rounded-full px-2.5 py-1.5 useSkill_style"
             >
               <img
                 src={skillIcons[skill]}
                 alt={skill}
                 title={skill}
-                className="w-4 h-4 mr-1"
+                className="w-4 h-4 mr-1 useSkill_img"
               />
               {skill}
             </span>
