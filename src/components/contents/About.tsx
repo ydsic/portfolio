@@ -3,36 +3,42 @@ import TypingText from "./typingtext/TypingText";
 import TypingTextList from "./typingtext/TypingTextList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faDatabase } from "@fortawesome/free-solid-svg-icons";
+import "./About.css";
 
 export default function About() {
   const [showTypingList, setShowTypingList] = useState(false);
+  const handleMouseOver = () => setShowTypingList(true);
+  const handleMouseLeave = () => setShowTypingList(false);
+  const toggleList = () => setShowTypingList((prev) => !prev);
 
   return (
     <section
       id="about"
-      className="w-full max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row gap-12 items-start"
+      className="mx-auto px-6 py-16 flex flex-row gap-12 items-start about-section"
     >
+      {/* 프로필 이미지 */}
       <div className="flex-shrink-0">
         <img
           src="/me/me.png"
           alt="프로필 이미지"
-          className="md:w-[280px] rounded-2xl shadow-lg object-cover"
+          className="w-[280px] rounded-2xl shadow-lg object-cover profile-img"
         />
       </div>
 
-      <div className="flex-1">
+      {/* 컨텐츠 */}
+      <div>
         <div className="flex items-center gap-3 mb-5 text-[var(--main-text)]">
           <FontAwesomeIcon icon={faDatabase} size="2x" />
-          <h2 className="text-4xl font-bold">About</h2>
+          <h2 className="text-[36px] font-bold about_font_size">About</h2>
         </div>
 
         <div
           className="flex justify-between items-center border-b border-[var(--border)] pb-2 mb-2 cursor-pointer"
-          onMouseOver={() => setShowTypingList(true)}
-          onMouseLeave={() => setShowTypingList(false)}
-          onClick={() => setShowTypingList((prev) => !prev)}
+          onMouseOver={handleMouseOver}
+          onMouseLeave={handleMouseLeave}
+          onClick={toggleList}
         >
-          <div className="flex flex-wrap items-baseline gap-2 text-[22px] text-[var(--main-text)]">
+          <div className="flex flex-wrap items-baseline gap-2 text-[16px] xs:text-[20px] md:text-[22px] text-[var(--main-text)]">
             <span>저는</span>
             <TypingText />
             <span>개발자입니다.</span>
@@ -45,7 +51,7 @@ export default function About() {
 
         <TypingTextList showTypingList={showTypingList} />
 
-        <article className="mt-[20px] text-[var(--main-text)] text-lg leading-relaxed space-y-4">
+        <article className="mt-[20px] text-[var(--main-text)] text-[16px] xs:text-[20px] md:text-[22px] leading-relaxed space-y-4">
           <p>안녕하세요. 프론트엔드 개발자 이예도입니다.</p>
           <p>
             저는 프론트엔드가 단순히 화면을 만드는 일을 넘어서, 다양한 사람들과

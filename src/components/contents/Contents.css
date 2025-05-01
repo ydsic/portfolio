@@ -1,0 +1,14 @@
+@media (max-width: 1279px) {
+  .contentDiv {
+    width: 85%;
+  }
+}
+
+@media (max-width: 767px) {
+  .contentDiv {
+    width: 95%;
+  }
+}
+
+@media (max-width: 479px) {
+}

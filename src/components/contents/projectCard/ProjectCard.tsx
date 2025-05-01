@@ -1,6 +1,7 @@
 import { skillIcons } from "../../../constants/skillIcons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faUsers, faCalendar } from "@fortawesome/free-solid-svg-icons";
+import "./ProjectCard.css";
 
 type ProjectCardProps = {
   title: string;
@@ -26,8 +27,21 @@ export default function ProjectCard({
   return (
     <div
       onClick={onClick}
-      className="w-[90%] bg-[var(--sub-bg2)] backdrop-blur-sm bg-opacity-80 border border-[var(--border)] rounded-2xl p-6 flex flex-col justify-between
-                 cursor-pointer transition-transform duration-300 transform hover:scale-103 hover:shadow-xl"
+      className="
+        w-[90%]
+        bg-[var(--sub-bg2)] bg-opacity-80 backdrop-blur-sm
+        border-2 border-[var(--border)]
+        rounded-2xl p-6 flex flex-col justify-between cursor-pointer
+
+        transform transition
+        duration-300 ease-in-out
+    
+        hover:border-[var(--button-hover)]
+        hover:shadow-lg
+        hover:scale-103
+
+        projectCardDiv
+      "
     >
       <div>
         <div className="flex justify-between">

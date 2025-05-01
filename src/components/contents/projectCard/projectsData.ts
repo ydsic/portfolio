@@ -3,7 +3,7 @@ import FortfolioImg from "../../../assets/projectimg/fortfolio.png";
 export const projects = [
   {
     title: "Riot Games 게임사의 전적검색 사이트",
-    date: "2024.9 ~ Present",
+    date: "2024.09 ~ Present",
     projecttype: "Team",
     description:
       "Riot Games 게임사에서 서비스 중인 게임의 전적검색 및 정보 제공 사이트",
