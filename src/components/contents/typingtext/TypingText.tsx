@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./TypingText.css";
 import { TypingCommentList } from "./TypingTextData";
 
@@ -14,51 +14,54 @@ export default function TypingText() {
     displayText: "",
     isDeleting: false,
   });
-
+  // 화면 밖일 때 true로 바뀌어 타이핑 중단
   const [isStopped, setIsStopped] = useState(false);
+  const elRef = useRef<HTMLHeadingElement>(null);
 
+  // 1) Intersection Observer 설정
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50 && !isStopped) {
-        setIsStopped(true);
-      }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsStopped(!entry.isIntersecting);
+      },
+      { root: null, rootMargin: "0px", threshold: 0 }
+    );
+    if (elRef.current) observer.observe(elRef.current);
+    return () => {
+      if (elRef.current) observer.unobserve(elRef.current);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isStopped]);
+  }, []);
 
+  // 2) 타이핑 이펙트 (isStopped 가 true 면 중단)
   useEffect(() => {
     if (isStopped) return;
 
     const currentText = TypingCommentList[state.currentCommentIndex];
-    const fullTextTyped = state.displayText === currentText;
-    const isEmpty = state.displayText === "";
+    const fullTyped = state.displayText === currentText;
+    const emptyText = state.displayText === "";
 
     let timeout: ReturnType<typeof setTimeout>;
     let speed = 100;
 
-    if (!state.isDeleting && !fullTextTyped) {
-      speed = 100;
+    if (!state.isDeleting && !fullTyped) {
       timeout = setTimeout(() => {
         setState((prev) => ({
           ...prev,
           displayText: currentText.slice(0, prev.displayText.length + 1),
         }));
       }, speed);
-    } else if (!state.isDeleting && fullTextTyped) {
-      speed = 1500;
+    } else if (!state.isDeleting && fullTyped) {
       timeout = setTimeout(() => {
         setState((prev) => ({ ...prev, isDeleting: true }));
-      }, speed);
-    } else if (state.isDeleting && !isEmpty) {
-      speed = 50;
+      }, 1500);
+    } else if (state.isDeleting && !emptyText) {
       timeout = setTimeout(() => {
         setState((prev) => ({
           ...prev,
           displayText: currentText.slice(0, prev.displayText.length - 1),
         }));
-      }, speed);
-    } else if (state.isDeleting && isEmpty) {
+      }, 50);
+    } else {
       timeout = setTimeout(() => {
         setState((prev) => ({
           currentCommentIndex:
@@ -73,7 +76,10 @@ export default function TypingText() {
   }, [state, isStopped]);
 
   return (
-    <h3 className="flex text-[var(--primary)] text-[16px] xs:text-[20px] md:text-[22px]">
+    <h3
+      ref={elRef}
+      className="flex text-[var(--primary)] text-[16px] xs:text-[20px] md:text-[22px]"
+    >
       {state.displayText}
     </h3>
   );

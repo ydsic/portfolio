@@ -11,7 +11,7 @@ export default function FloatingButton() {
   return (
     <div>
       <Contact buttonStyle={buttonStyle} />
-      <UpScroll buttonStyle={buttonStyle} />
+      <UpScroll />
       <DarkMod buttonStyle={buttonStyle} />
     </div>
   );
