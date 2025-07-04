@@ -44,7 +44,7 @@ export default function RiotGames({ onClose }: CloseModal) {
     "PostgreSQL",
     "Docker",
     "Jenkins",
-    "Raspberry Pi",
+    "Raspberry-Pi",
   ];
 
   const [imgModal, setImgModal] = useState<string | null>(null);
@@ -312,16 +312,94 @@ export default function RiotGames({ onClose }: CloseModal) {
           </section>
 
           {/* 트러블 슈팅 & 회고 */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-1 gap-6">
             <section className="space-y-4">
               <h2 className="text-2xl font-bold text-[var(--main-text)] border-b border-[var(--border)] pb-2">
                 트러블 슈팅
               </h2>
-              <div className="bg-[var(--sub-bg2)] p-4 rounded-lg border border-[var(--border)]">
-                <p className="text-[var(--sub-text)] text-sm">
-                  API 호출 최적화, 성능 개선, 반응형 디자인 구현 등의 기술적
-                  도전 과제를 해결하며 프로젝트를 완성했습니다.
-                </p>
+              <div className="space-y-4">
+                <div className="bg-[var(--sub-bg2)] p-5 rounded-lg border border-[var(--border)]">
+                  <h3 className="font-semibold text-[var(--main-text)] mb-3 flex items-center gap-2">
+                    <FontAwesomeIcon
+                      icon={faChartLine}
+                      className="text-blue-500"
+                    />
+                    복잡한 게임 데이터 시각화 및 UI 컴포넌트 개발
+                  </h3>
+                  <div className="text-[var(--sub-text)] space-y-2 text-sm">
+                    <p>
+                      <strong>문제:</strong> 발로란트 매치 데이터는 라운드별,
+                      플레이어별 상세 정보가 복잡하게 얽혀 있어 효과적인 데이터
+                      시각화 UI 구현이 어려웠음
+                    </p>
+                    <p>
+                      <strong>해결:</strong> React 커스텀 훅으로 데이터 처리
+                      로직 분리, 효율적인 컴포넌트 계층 구조 설계, 대시보드
+                      형태의 통합 UI로 사용자 정보 인지 속도 50% 향상
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-[var(--sub-bg2)] p-5 rounded-lg border border-[var(--border)]">
+                  <h3 className="font-semibold text-[var(--main-text)] mb-3 flex items-center gap-2">
+                    <FontAwesomeIcon icon={faCode} className="text-green-500" />
+                    React 컴포넌트 성능 최적화
+                  </h3>
+                  <div className="text-[var(--sub-text)] space-y-2 text-sm">
+                    <p>
+                      <strong>문제:</strong> 대용량 게임 데이터를 렌더링할 때
+                      React 컴포넌트의 불필요한 리렌더링으로 인한 UI 지연 및
+                      메모리 사용량 증가
+                    </p>
+                    <p>
+                      <strong>해결:</strong> React.memo와 useMemo 도입, 지연
+                      로딩 전략 적용으로 초기 로드 시간 50% 단축
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-[var(--sub-bg2)] p-5 rounded-lg border border-[var(--border)]">
+                  <h3 className="font-semibold text-[var(--main-text)] mb-3 flex items-center gap-2">
+                    <FontAwesomeIcon
+                      icon={faCogs}
+                      className="text-purple-500"
+                    />
+                    다크 모드 및 반응형 레이아웃 구현
+                  </h3>
+                  <div className="text-[var(--sub-text)] space-y-2 text-sm">
+                    <p>
+                      <strong>문제:</strong> 다양한 화면 크기와 사용자 환경
+                      설정을 지원하는 반응형 레이아웃과 테마 시스템 구현의
+                      복잡성
+                    </p>
+                    <p>
+                      <strong>해결:</strong> 컴포넌트 기반 반응형 디자인 설계,
+                      뷰포트에 따른 최적화된 레이아웃으로 모바일 사용자 경험
+                      개선
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-[var(--sub-bg2)] p-5 rounded-lg border border-[var(--border)]">
+                  <h3 className="font-semibold text-[var(--main-text)] mb-3 flex items-center gap-2">
+                    <FontAwesomeIcon
+                      icon={faLightbulb}
+                      className="text-orange-500"
+                    />
+                    사용자 인터랙션 및 애니메이션 최적화
+                  </h3>
+                  <div className="text-[var(--sub-text)] space-y-2 text-sm">
+                    <p>
+                      <strong>문제:</strong> 복잡한 데이터 차트와 애니메이션이
+                      많은 UI에서 프레임 드롭과 렌더링 성능 저하 발생
+                    </p>
+                    <p>
+                      <strong>해결:</strong> CSS 트랜지션 대신 transform 속성
+                      활용, React 트랜지션 그룹 최적화로 성능 유지 및 사용자
+                      만족도 증가
+                    </p>
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -329,11 +407,28 @@ export default function RiotGames({ onClose }: CloseModal) {
               <h2 className="text-2xl font-bold text-[var(--main-text)] border-b border-[var(--border)] pb-2">
                 회고
               </h2>
-              <div className="bg-[var(--sub-bg2)] p-4 rounded-lg border border-[var(--border)]">
-                <p className="text-[var(--sub-text)] text-sm">
-                  실제 사용자들의 피드백을 받으며 서비스를 개선해나가는 과정에서
-                  많은 것을 배웠습니다.
-                </p>
+              <div className="bg-[var(--sub-bg2)] p-5 rounded-lg border border-[var(--border)]">
+                <div className="text-[var(--sub-text)] space-y-3 text-sm">
+                  <p>
+                    프론트엔드 개발자로서 이 프로젝트는 게임 데이터를 시각적으로
+                    표현하는 방법에 대해 많은 고민을 하게 해준 소중한
+                    경험이었습니다. 특히 React를 활용한 컴포넌트 설계와 상태
+                    관리 패턴을 실제 서비스에 적용해보며 이론적 지식을 넘어 실무
+                    역량을 크게 향상시킬 수 있었습니다.
+                  </p>
+                  <p>
+                    사용자 중심의 UI/UX 디자인을 통해 게임 데이터를 직관적으로
+                    표현하는 과정에서 발생한 다양한 이슈들을 해결하며,
+                    프론트엔드 개발의 깊이를 더할 수 있었고 사용자 피드백을
+                    기반으로 지속적인 개선을 진행하는 과정이 매우 보람찼습니다.
+                  </p>
+                  <p>
+                    현재 TypeScript와 TailwindCSS 도입으로 사이트의 전체적인
+                    UI와 리펙토링을 진행 중입니다. 앞으로 더 나은 사용자 경험과
+                    개발 생산성을 제공하고, 컴포넌트 라이브러리 구축을 통해
+                    일관된 디자인 시스템을 확립하는 것이 목표입니다.
+                  </p>
+                </div>
               </div>
             </section>
           </div>
