@@ -26,9 +26,10 @@ export default function TypingText() {
       },
       { root: null, rootMargin: "0px", threshold: 0 }
     );
-    if (elRef.current) observer.observe(elRef.current);
+    const element = elRef.current;
+    if (element) observer.observe(element);
     return () => {
-      if (elRef.current) observer.unobserve(elRef.current);
+      if (element) observer.unobserve(element);
     };
   }, []);
 
@@ -41,7 +42,7 @@ export default function TypingText() {
     const emptyText = state.displayText === "";
 
     let timeout: ReturnType<typeof setTimeout>;
-    let speed = 100;
+    const speed = 100;
 
     if (!state.isDeleting && !fullTyped) {
       timeout = setTimeout(() => {
@@ -78,7 +79,7 @@ export default function TypingText() {
   return (
     <h3
       ref={elRef}
-      className="flex text-[var(--primary)] text-[16px] xs:text-[20px] md:text-[22px]"
+      className="inline-block text-left text-[var(--primary)] text-lg lg:text-xl "
     >
       {state.displayText}
     </h3>

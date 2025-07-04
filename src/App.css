@@ -1,6 +1,6 @@
 .light_theme {
   --bg: #ffffff;
-  --title-bg: #ffffffaa;
+  --title-bg: rgba(255, 255, 255, 0.85);
   --sub-bg: #f9f9f9;
   --sub-bg2: #f0f0f0;
   --hover-bg: #e5e5e5;
@@ -12,21 +12,21 @@
   --success: #22c55e;
   --error: #ef4444;
   --warning: #eab308;
-  --border: #3a3a3a;
+  --border: #e5e5e5;
   --button: #2563eb;
   --button-hover: #1d4ed8;
 }
 
 .dark_theme {
-  --bg: #121212;
-  --title-bg: #121212aa;
-  --sub-bg: #1e1e1e;
-  --sub-bg2: #2a2a2a;
+  --bg: #0f0f0f;
+  --title-bg: rgba(18, 18, 18, 0.85);
+  --sub-bg: #1a1a1a;
+  --sub-bg2: #262626;
   --hover-bg: #3a3a3a;
   --overlay-bg: #ffffff1a;
   --alert-bg: #1e3a8a;
-  --main-text: #e0e0e0;
-  --sub-text: #a0a0a0;
+  --main-text: #f5f5f5;
+  --sub-text: #a3a3a3;
   --primary: #3b82f6;
   --success: #4ade80;
   --error: #f87171;

@@ -19,10 +19,10 @@ export default function ScrollProgressBar() {
   }, []);
 
   return (
-    <div className="fixed top-[8vh] left-0 w-full h-[1px] bg-transparent z-[9999]">
+    <div className="fixed top-[7.8vh] left-0 w-full h-[2px] bg-transparent z-[9999]">
       <div
         ref={progressRef}
-        className="h-full bg-[var(--primary)] transition-all duration-150 ease-out"
+        className="h-full bg-[var(--primary)]  transition-all duration-150 ease-out"
         style={{ width: "0%" }}
       />
     </div>

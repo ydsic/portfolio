@@ -14,9 +14,9 @@ export default function Title() {
 
   return (
     <>
-      <div className="fixed w-screen h-[8vh] flex justify-between items-center bg-[var(--title-bg)] backdrop-blur-sm z-50 px-52 header">
+      <div className="fixed w-screen h-[8vh] flex justify-between items-center bg-[var(--title-bg)] backdrop-blur-md border-b border-[var(--border)] border-opacity-20 shadow-lg z-50 px-52 header transition-all duration-300">
         <div>
-          <p className="text-[var(--main-text)] text-[24px] font-[Poppins] font-[700] title-text">
+          <p className="text-[var(--main-text)] text-[24px] font-[Poppins] font-[700] title-text hover:text-[var(--primary)] transition-colors duration-200 cursor-pointer">
             Yedo Portfolio
           </p>
         </div>
@@ -29,7 +29,7 @@ export default function Title() {
                 href="https://blog.yedo.dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={linkStyle}
+                className={`${linkStyle} hover:transform hover:scale-105 transition-all duration-200`}
               >
                 Blog
               </a>
@@ -41,7 +41,7 @@ export default function Title() {
                 smooth={true}
                 duration={700}
                 offset={-30}
-                className={linkStyle}
+                className={`${linkStyle} hover:transform hover:scale-105 transition-all duration-200`}
                 activeClass={activeStyle}
               >
                 {section.charAt(0).toUpperCase() + section.slice(1)}
