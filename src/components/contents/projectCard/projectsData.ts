@@ -1,4 +1,7 @@
-import FortfolioImg from "../../../assets/projectimg/fortfolio.png";
+import fortfolioImg1 from "../../../assets/projectimg/fortfolio.png";
+import fortfolioImg2 from "../../../assets/projectimg/fortfolio2.png";
+import kovaltImg1 from "../../../assets/projectimg/kovalt1.png";
+import kovaltImg2 from "../../../assets/projectimg/kovalt2.png";
 
 export const projects = [
   {
@@ -7,8 +10,8 @@ export const projects = [
     projecttype: "Team",
     description:
       "Riot Games 게임사에서 서비스 중인 게임의 전적검색 및 정보 제공 사이트",
-    image1: "/images/.png",
-    image2: "/images/.png",
+    image1: kovaltImg1,
+    image2: kovaltImg2,
     skills: [
       "React",
       "JavaScript",
@@ -22,12 +25,29 @@ export const projects = [
     ],
   },
   {
+    title: "ChatGPT API를 활용한 프로젝트 1",
+    date: "진행날짜 부분",
+    projecttype: "Team",
+    description: "Project4 프로젝트 설명 부분",
+    image1: "/images/.png",
+    image2: "/images/.png",
+    skills: [
+      "React",
+      "JavaScript",
+      "TailwindCSS",
+      "Zustand",
+      "Github",
+      "Github_Actions",
+      "Github_Pages",
+    ],
+  },
+  {
     title: "개인 Portfolio & Blog 페이지 제작",
     date: "2025.04 ~ Present",
     projecttype: "Personal",
     description: "React + Tailwind로 만든 반응형 개인 포트폴리오 페이지",
-    image1: FortfolioImg,
-    image2: "/images/.png",
+    image1: fortfolioImg1,
+    image2: fortfolioImg2,
     skills: [
       "React",
       "Next.js",
@@ -39,25 +59,7 @@ export const projects = [
     ],
   },
   {
-    title: "ChatGPT API를 활용한 프로젝트 1",
-    date: "진행날짜 부분",
-    projecttype: "Team",
-    description: "Project4 프로젝트 설명 부분",
-    image1: "/images/.png",
-    image2: "/images/.png",
-    skills: ["Next.js"],
-  },
-  {
-    title: "구름 부트캠프에서 진행되는 프로젝트 1",
-    date: "진행날짜 부분",
-    projecttype: "Team",
-    description: "Project 프로젝트 설명 부분",
-    image1: "/images/.png",
-    image2: "/images/.png",
-    skills: ["React"],
-  },
-  {
-    title: "구름 부트캠프에서 진행되는 프로젝트 2",
+    title: "구름 부트캠프에서 진행되는 프로젝트",
     date: "진행날짜 부분",
     projecttype: "Team",
     description: "Project 프로젝트 설명 부분",

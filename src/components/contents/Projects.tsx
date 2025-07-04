@@ -19,7 +19,11 @@ export default function Projects() {
       case 0:
         return <RiotGames onClose={closeDetail} />;
       case 1:
+      // 프로젝트 링크
+      case 2:
         return <PortfolioContents onClose={closeDetail} />;
+      case 3:
+      // 프로젝트 링크
     }
   };
 
@@ -33,7 +37,7 @@ export default function Projects() {
         <h2 className="text-4xl font-bold projects_font_size">Projects</h2>
       </div>
 
-      <div className="flex flex-col gap-5 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {projects.map((project, index) => (
           <ProjectCard
             key={index}

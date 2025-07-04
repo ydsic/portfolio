@@ -22,6 +22,8 @@ import postgresqlIcon from "../assets/skillsimg/postgresql.svg";
 import jenkinsIcon from "../assets/skillsimg/jenkins.svg";
 import gitlabIcon from "../assets/skillsimg/gitlab.svg";
 import nodejsIcon from "../assets/skillsimg/nodejs.svg";
+import githubActionsIcon from "../assets/skillsimg/githubactions.svg";
+import githubPagesIcon from "../assets/skillsimg/githubpages.svg";
 
 export const skillIcons: Record<string, string> = {
   React: reactIcon,
@@ -48,4 +50,6 @@ export const skillIcons: Record<string, string> = {
   Jenkins: jenkinsIcon,
   Gitlab: gitlabIcon,
   "Node.js": nodejsIcon,
+  Github_Actions: githubActionsIcon,
+  Github_Pages: githubPagesIcon,
 };

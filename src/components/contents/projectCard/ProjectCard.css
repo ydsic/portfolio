@@ -48,6 +48,14 @@
     width: 14px;
     height: 14px;
   }
+
+  .projectCardTitle {
+    font-size: 16px;
+  }
+
+  .projectCardDes {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 479px) {
@@ -72,5 +80,13 @@
   .useSkill_img {
     width: 12px;
     height: 12px;
+  }
+
+  .projectCardTitle {
+    font-size: 14px;
+  }
+
+  .projectCardDes {
+    font-size: 12px;
   }
 }

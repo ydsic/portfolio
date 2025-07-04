@@ -4,6 +4,7 @@ import TypingTextList from "./typingtext/TypingTextList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faDatabase } from "@fortawesome/free-solid-svg-icons";
 import "./About.css";
+import { skillIcons } from "../../constants/skillIcons";
 
 export default function About() {
   const [showTypingList, setShowTypingList] = useState(false);
@@ -14,22 +15,34 @@ export default function About() {
   return (
     <section
       id="about"
-      className="max-w-6xl mx-auto px-6 py-16 flex flex-row gap-12 items-start about-section"
+      className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-16 flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 items-start about-section"
     >
       {/* 프로필 이미지 */}
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0 w-full lg:w-auto flex flex-col items-center">
         <img
           src="/me/me.png"
           alt="프로필 이미지"
-          className="w-[280px] rounded-2xl shadow-lg object-cover profile-img"
+          className="w-[200px] sm:w-[240px] lg:w-[260px] rounded-2xl shadow-lg object-cover profile-img"
         />
+
+        <a
+          href="https://github.com/ydsic"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex bg-[var(--button)] justify-center items-center mt-3 sm:mt-4 lg:mt-5 px-3 py-2 rounded-lg gap-2 hover:opacity-80 transition-opacity cursor-pointer"
+        >
+          <img src={skillIcons["Github"]} className="w-6 h-6 sm:w-8 sm:h-8" />
+          <p className="text-[var(--main-text)] text-sm sm:text-base">Github</p>
+        </a>
       </div>
 
       {/* 컨텐츠 */}
-      <div>
-        <div className="flex items-center gap-3 mb-5 text-[var(--main-text)]">
-          <FontAwesomeIcon icon={faDatabase} size="2x" />
-          <h2 className="text-[36px] font-bold about_font_size">About</h2>
+      <div className="flex-1 w-full">
+        <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5 text-[var(--main-text)]">
+          <FontAwesomeIcon icon={faDatabase} className="text-xl sm:text-2xl" />
+          <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-bold about_font_size">
+            About
+          </h2>
         </div>
 
         <div
@@ -38,20 +51,20 @@ export default function About() {
           onMouseLeave={handleMouseLeave}
           onClick={toggleList}
         >
-          <div className="flex flex-wrap items-baseline gap-2 text-[16px] xs:text-[20px] md:text-[22px] text-[var(--main-text)]">
+          <div className="flex flex-wrap items-baseline gap-1 sm:gap-2 text-base sm:text-lg lg:text-xl xl:text-[22px] text-[var(--main-text)]">
             <span>저는</span>
             <TypingText />
             <span>개발자입니다.</span>
           </div>
           <FontAwesomeIcon
             icon={faCaretDown}
-            className="text-white text-xl mr-3"
+            className="text-white text-lg sm:text-xl mr-2 sm:mr-3 flex-shrink-0"
           />
         </div>
 
         <TypingTextList showTypingList={showTypingList} />
 
-        <article className="mt-[20px] text-[var(--main-text)] text-[16px] xs:text-[18px] md:text-[20px] leading-relaxed space-y-4">
+        <article className="mt-4 sm:mt-5 lg:mt-[20px] text-[var(--main-text)] text-sm sm:text-base lg:text-lg xl:text-[20px] leading-relaxed space-y-3 sm:space-y-4">
           <p>안녕하세요. 프론트엔드 개발자 이예도입니다.</p>
           <p>
             저는 프론트엔드가 단순히 화면을 만드는 일을 넘어서, 다양한 사람들과

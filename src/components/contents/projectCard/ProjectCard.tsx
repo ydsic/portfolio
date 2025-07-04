@@ -9,7 +9,6 @@ type ProjectCardProps = {
   projecttype: string;
   description: string;
   image1?: string;
-  image2?: string;
   skills?: string[];
   onClick?: () => void;
 };
@@ -20,7 +19,6 @@ export default function ProjectCard({
   projecttype,
   description,
   image1,
-  image2,
   skills = [],
   onClick,
 }: ProjectCardProps) {
@@ -59,20 +57,15 @@ export default function ProjectCard({
         </div>
 
         {/* 이미지 */}
-        {image1 && image2 && (
+        {image1 && (
           <div className="flex gap-6 h-60 justify-center my-2 projectCardImages">
             <img src={image1} alt={title} className="object-cover rounded-lg" />
-            <img
-              src={image2}
-              alt={title}
-              className="object-cover rounded-lg hidden md:block"
-            />
           </div>
         )}
 
         {/* 타이틀 + 설명 */}
-        <h3 className="text-2xl font-semibold mb-2">{title}</h3>
-        <p className="text-base text-[var(--main-text)] line-clamp-3 mb-4">
+        <h3 className="text-2xl mb-2 projectCardTitle">{title}</h3>
+        <p className="text-base text-[var(--main-text)] line-clamp-3 mb-4 projectCardDes">
           {description}
         </p>
       </div>
