@@ -10,7 +10,7 @@ export default function Title() {
     "text-[var(--main-text)] text-[20px] cursor-pointer transition duration-200 hover:text-[var(--primary)] hover:underline underline-offset-4";
   const activeStyle = "text-[var(--primary)] underline underline-offset-4";
 
-  const navLinks = ["about", "skills", "projects", "blog"];
+  const navLinks = ["about", "skills", "projects"];
 
   return (
     <>
@@ -22,32 +22,20 @@ export default function Title() {
         </div>
 
         <div className="flex gap-15 nav-list">
-          {navLinks.map((section) =>
-            section === "blog" ? (
-              <a
-                key={section}
-                href="https://blog.yedo.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${linkStyle} hover:transform hover:scale-105 transition-all duration-200`}
-              >
-                Blog
-              </a>
-            ) : (
-              <Link
-                key={section}
-                to={section}
-                spy={true}
-                smooth={true}
-                duration={700}
-                offset={-30}
-                className={`${linkStyle} hover:transform hover:scale-105 transition-all duration-200`}
-                activeClass={activeStyle}
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </Link>
-            )
-          )}
+          {navLinks.map((section) => (
+            <Link
+              key={section}
+              to={section}
+              spy={true}
+              smooth={true}
+              duration={700}
+              offset={-30}
+              className={`${linkStyle} hover:transform hover:scale-105 transition-all duration-200`}
+              activeClass={activeStyle}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </Link>
+          ))}
         </div>
 
         <div className="hamburger hidden">
@@ -62,34 +50,21 @@ export default function Title() {
 
       {isOpen && (
         <div className="mobile-menu">
-          {navLinks.map((section) =>
-            section === "blog" ? (
-              <a
-                key={section}
-                href="https://blog.yedo.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkStyle}
-                onClick={() => setIsOpen(false)}
-              >
-                Blog
-              </a>
-            ) : (
-              <Link
-                key={section}
-                to={section}
-                spy={true}
-                smooth={true}
-                duration={700}
-                offset={-30}
-                className={linkStyle}
-                activeClass={activeStyle}
-                onClick={() => setIsOpen(false)}
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </Link>
-            )
-          )}
+          {navLinks.map((section) => (
+            <Link
+              key={section}
+              to={section}
+              spy={true}
+              smooth={true}
+              duration={700}
+              offset={-30}
+              className={linkStyle}
+              activeClass={activeStyle}
+              onClick={() => setIsOpen(false)}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </Link>
+          ))}
         </div>
       )}
 

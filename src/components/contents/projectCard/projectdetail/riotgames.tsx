@@ -9,7 +9,9 @@ import {
   faTrophy,
   faLightbulb,
   faX,
+  faExternalLinkAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { skillIcons } from "../../../../constants/skillIcons";
 import kovalt1 from "../../../../assets/projectimg/kovalt1.png";
 import kovalt2 from "../../../../assets/projectimg/kovalt2.png";
@@ -17,9 +19,15 @@ import { useEffect, useState } from "react";
 
 type CloseModal = {
   onClose: () => void;
+  githubUrl?: string;
+  liveUrl?: string;
 };
 
-export default function RiotGames({ onClose }: CloseModal) {
+export default function RiotGames({
+  onClose,
+  githubUrl = "https://github.com/yourusername/kovalt-project",
+  liveUrl = "https://kovalt.info",
+}: CloseModal) {
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -81,12 +89,43 @@ export default function RiotGames({ onClose }: CloseModal) {
               KoValT.info
             </h1>
           </div>
-          <button
-            onClick={onClose}
-            className="text-[var(--sub-text)] hover:text-[var(--main-text)] transition-colors p-2"
-          >
-            <FontAwesomeIcon icon={faX} size="lg" />
-          </button>
+          <div className="flex items-center gap-3">
+            {/* GitHub 링크 버튼 */}
+            {githubUrl && (
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[var(--sub-bg2)] text-[var(--main-text)] hover:bg-[var(--button-hover)] transition-all duration-300 py-2 px-4 rounded-lg flex items-center gap-2 border border-[var(--border)]"
+                title="GitHub 저장소"
+              >
+                <FontAwesomeIcon icon={faGithub} size="lg" />
+                <span>GitHub</span>
+              </a>
+            )}
+
+            {/* 홈페이지 링크 버튼 */}
+            {liveUrl && (
+              <a
+                href={liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[var(--sub-bg2)] text-[var(--main-text)] hover:bg-[var(--button-hover)] transition-all duration-300 py-2 px-4 rounded-lg flex items-center gap-2 border border-[var(--border)]"
+                title="사이트 방문하기"
+              >
+                <FontAwesomeIcon icon={faExternalLinkAlt} size="lg" />
+                <span>Live Demo</span>
+              </a>
+            )}
+
+            {/* 닫기 버튼 */}
+            <button
+              onClick={onClose}
+              className="text-[var(--sub-text)] hover:text-[var(--main-text)] transition-colors p-2"
+            >
+              <FontAwesomeIcon icon={faX} size="lg" />
+            </button>
+          </div>
         </div>
 
         <div className="p-6 space-y-8">
@@ -285,6 +324,37 @@ export default function RiotGames({ onClose }: CloseModal) {
                     • 영향력 있는 유튜버와 함께 게임 유저들의 인기 검색어 분야
                     정보 제공
                   </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* 팀원 소개 */}
+          <section className="space-y-4">
+            <h2 className="text-2xl font-bold text-[var(--main-text)] border-b border-[var(--border)] pb-2 flex items-center gap-2">
+              <FontAwesomeIcon icon={faUsers} className="text-blue-500" />
+              팀원 소개
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-[var(--sub-bg2)] p-5 rounded-lg border border-[var(--border)]">
+                <h3 className="font-semibold text-[var(--main-text)] mb-3">
+                  이예도 - 프론트엔드 총괄
+                </h3>
+                <ul className="text-[var(--sub-text)] space-y-2 text-sm">
+                  <li>• 프론트엔드 전체적인 부분 UI/UX 기획 및 구현</li>
+                  <li>• React 컴포넌트 및 상태 관리 구조 설계</li>
+                  <li>• 데이터 시각화 및 인터랙티브 UI 요소 개발</li>
+                </ul>
+              </div>
+
+              <div className="bg-[var(--sub-bg2)] p-5 rounded-lg border border-[var(--border)]">
+                <h3 className="font-semibold text-[var(--main-text)] mb-3">
+                  심형석 - 백엔드 총괄 / DevOps
+                </h3>
+                <ul className="text-[var(--sub-text)] space-y-2 text-sm">
+                  <li>• 서버 인프라 구축 및 CI/CD 파이프라인 관리</li>
+                  <li>• PostgreSQL 데이터베이스 설계 및 최적화</li>
+                  <li>• 라이엇 API 연동 및 데이터 처리 로직 구현</li>
                 </ul>
               </div>
             </div>

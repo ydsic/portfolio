@@ -10,6 +10,8 @@ type ProjectCardProps = {
   description: string;
   image1?: string;
   skills?: string[];
+  githubUrl?: string;
+  liveUrl?: string;
   onClick?: () => void;
 };
 

@@ -15,15 +15,34 @@ export default function Projects() {
 
   const renderProjectDetail = () => {
     if (selectedIndex === null) return null;
+
+    const project = projects[selectedIndex];
+
     switch (selectedIndex) {
       case 0:
-        return <RiotGames onClose={closeDetail} />;
+        return (
+          <RiotGames
+            onClose={closeDetail}
+            githubUrl={project.githubUrl}
+            liveUrl={project.liveUrl}
+          />
+        );
       case 1:
-      // 프로젝트 링크
+        // 프로젝트 링크
+        return null;
       case 2:
-        return <PortfolioContents onClose={closeDetail} />;
+        return (
+          <PortfolioContents
+            onClose={closeDetail}
+            githubUrl={project.githubUrl}
+            liveUrl={project.liveUrl}
+          />
+        );
       case 3:
-      // 프로젝트 링크
+        // 프로젝트 링크
+        return null;
+      default:
+        return null;
     }
   };
 
