@@ -12,14 +12,6 @@ export default function Footer() {
 
           <div className="flex gap-4 text-[var(--sub-text)] text-sm">
             <a
-              href="https://blog.yedo.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[var(--primary)] transition-colors duration-200"
-            >
-              Blog
-            </a>
-            <a
               href="https://github.com/ydsic"
               target="_blank"
               rel="noopener noreferrer"

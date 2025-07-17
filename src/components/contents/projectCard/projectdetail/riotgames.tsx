@@ -14,6 +14,7 @@ import {
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { skillIcons } from "../../../../constants/skillIcons";
 import kovalt1 from "../../../../assets/projectimg/kovalt1.png";
+import kovalt_new_1 from "../../../../assets/projectimg/kovalt_new_1.png";
 import kovalt2 from "../../../../assets/projectimg/kovalt2.png";
 import { useEffect, useState } from "react";
 
@@ -23,11 +24,7 @@ type CloseModal = {
   liveUrl?: string;
 };
 
-export default function RiotGames({
-  onClose,
-  githubUrl = "https://github.com/yourusername/kovalt-project",
-  liveUrl = "https://kovalt.info",
-}: CloseModal) {
+export default function RiotGames({ onClose, githubUrl, liveUrl }: CloseModal) {
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -132,7 +129,7 @@ export default function RiotGames({
           {/* 메인 이미지 */}
           <div className="flex justify-center">
             <img
-              src={kovalt1}
+              src={kovalt_new_1}
               alt="KoValT.info 메인"
               className="rounded-lg shadow-lg max-w-full h-auto"
             />
@@ -367,17 +364,17 @@ export default function RiotGames({
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               <img
-                src={kovalt1}
+                src={kovalt_new_1}
                 alt="KoValT.info 메인 화면"
                 className="rounded-lg shadow-lg w-full h-64 object-cover cursor-pointer"
-                onClick={() => setImgModal(kovalt1)}
+                onClick={() => setImgModal(kovalt_new_1)}
               />
-              <img
+              {/* <img
                 src={kovalt2}
                 alt="KoValT.info 상세 화면"
                 className="rounded-lg shadow-lg w-full h-64 object-cover cursor-pointer"
                 onClick={() => setImgModal(kovalt2)}
-              />
+              /> */}
             </div>
           </section>
 

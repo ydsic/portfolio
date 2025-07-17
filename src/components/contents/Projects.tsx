@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderOpen } from "@fortawesome/free-solid-svg-icons";
 import RiotGames from "./projectCard/projectdetail/riotgames";
 import "./Projects.css";
+import MyInterviewMate from "./projectCard/projectdetail/my_interview_mate";
 
 export default function Projects() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -28,9 +29,18 @@ export default function Projects() {
           />
         );
       case 1:
-        // 프로젝트 링크
-        return null;
+        return (
+          <MyInterviewMate
+            onClose={closeDetail}
+            githubUrl={project.githubUrl}
+            liveUrl={project.liveUrl}
+          />
+        );
       case 2:
+        return null;
+      case 3:
+        return null;
+      case 4:
         return (
           <PortfolioContents
             onClose={closeDetail}
@@ -38,9 +48,6 @@ export default function Projects() {
             liveUrl={project.liveUrl}
           />
         );
-      case 3:
-        // 프로젝트 링크
-        return null;
       default:
         return null;
     }

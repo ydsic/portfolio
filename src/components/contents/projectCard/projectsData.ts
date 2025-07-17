@@ -1,6 +1,7 @@
 import fortfolioImg1 from "../../../assets/projectimg/fortfolio.png";
 import fortfolioImg2 from "../../../assets/projectimg/fortfolio2.png";
 import kovaltImg1 from "../../../assets/projectimg/kovalt1.png";
+import kovalt_new_1 from "../../../assets/projectimg/kovalt_new_1.png";
 import kovaltImg2 from "../../../assets/projectimg/kovalt2.png";
 
 export const projects = [
@@ -10,8 +11,7 @@ export const projects = [
     projecttype: "Team",
     description:
       "Riot Games 게임사에서 서비스 중인 게임의 전적검색 및 정보 제공 사이트",
-    image1: kovaltImg1,
-    image2: kovaltImg2,
+    image1: kovalt_new_1,
     githubUrl: "https://github.com/ydsic/kovalt",
     liveUrl: "https://kovalt.info",
     skills: [
@@ -28,12 +28,14 @@ export const projects = [
   },
   {
     title: "나의 인터뷰 메이트",
-    date: "2025.06 ~ 2025.09",
+    date: "2025.06 ~ 2025.08",
     projecttype: "Team",
     description:
       "ChatGPT API를 활용한 신입 프론트엔드 개발자들의 기술 면접 연습 도우미",
     image1: "/images/.png",
     image2: "/images/.png",
+    githubUrl: "https://github.com/ydsic/my_interview_mate",
+    liveUrl: "https://my-interview-mate.vercel.app/",
     skills: [
       "React",
       "TypeScript",
@@ -54,7 +56,7 @@ export const projects = [
     skills: ["React", "TypeScript", "TailwindCSS", "Zustand"],
   },
   {
-    title: "구름 부트캠프에서 진행되는 최종 프로젝트",
+    title: "최종 프로젝트",
     date: "2025.08 ~ 2025.09",
     projecttype: "Team",
     description: "Project 프로젝트 설명 부분",
