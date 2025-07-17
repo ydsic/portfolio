@@ -13,9 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { skillIcons } from "../../../../constants/skillIcons";
-import kovalt1 from "../../../../assets/projectimg/kovalt1.png";
 import kovalt_new_1 from "../../../../assets/projectimg/kovalt_new_1.png";
-import kovalt2 from "../../../../assets/projectimg/kovalt2.png";
 import { useEffect, useState } from "react";
 
 type CloseModal = {

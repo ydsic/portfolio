@@ -1,8 +1,6 @@
 import fortfolioImg1 from "../../../assets/projectimg/fortfolio.png";
 import fortfolioImg2 from "../../../assets/projectimg/fortfolio2.png";
-import kovaltImg1 from "../../../assets/projectimg/kovalt1.png";
 import kovalt_new_1 from "../../../assets/projectimg/kovalt_new_1.png";
-import kovaltImg2 from "../../../assets/projectimg/kovalt2.png";
 
 export const projects = [
   {
