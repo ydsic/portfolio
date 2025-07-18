@@ -23,6 +23,8 @@ export default function About() {
           src="/me/me.png"
           alt="프로필 이미지"
           className="w-[280px] sm:w-[320px] lg:w-[300px] rounded-2xl shadow-lg object-cover profile-img"
+          loading="eager"
+          fetchPriority="high"
         />
 
         <div className="w-full flex justify-center mt-4 lg:mt-6">
