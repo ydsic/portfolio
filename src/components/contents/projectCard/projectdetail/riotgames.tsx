@@ -42,11 +42,15 @@ export default function RiotGames({ onClose, githubUrl, liveUrl }: CloseModal) {
 
   const techSkills = [
     "React",
-    "JavaScript",
+    "TypeScript",
+    "TailwindCSS",
+    "Zustand",
     "Node.js",
-    "PostgreSQL",
-    "Docker",
+    "MongoDB",
     "Jenkins",
+    "Docker",
+    "Github",
+    "Unix",
     "Raspberry-Pi",
   ];
 
@@ -61,13 +65,13 @@ export default function RiotGames({ onClose, githubUrl, liveUrl }: CloseModal) {
       {/* 이미지 원본 모달 */}
       {imgModal && (
         <div
-          className="fixed inset-0 z-[11000] flex items-center justify-center bg-black bg-opacity-70"
+          className="fixed inset-0 z-[11000] flex items-center justify-center bg-black bg-opacity-80"
           onClick={() => setImgModal(null)}
         >
           <img
             src={imgModal}
             alt="원본 이미지"
-            className="max-w-3xl max-h-[90vh] rounded-lg shadow-2xl border-4 border-white"
+            className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl"
           />
         </div>
       )}

@@ -1,6 +1,7 @@
 import fortfolioImg1 from "../../../assets/projectimg/fortfolio.png";
 import fortfolioImg2 from "../../../assets/projectimg/fortfolio2.png";
 import kovalt_new_1 from "../../../assets/projectimg/kovalt_new_1.png";
+import interviewImg1 from "../../../assets/projectimg/interview1.png";
 
 export const projects = [
   {
@@ -10,13 +11,15 @@ export const projects = [
     description:
       "Riot Games 게임사에서 서비스 중인 게임의 전적검색 및 정보 제공 사이트",
     image1: kovalt_new_1,
-    githubUrl: "https://github.com/ydsic/kovalt",
-    liveUrl: "https://kovalt.info",
+    // githubUrl: "https://github.com/ydsic/kovalt",
+    // liveUrl: "https://kovalt.info",
     skills: [
       "React",
       "TypeScript",
+      "TailwindCSS",
+      "Zustand",
       "Node.js",
-      "PostgreSQL",
+      "MongoDB",
       "Jenkins",
       "Docker",
       "Github",
@@ -30,8 +33,7 @@ export const projects = [
     projecttype: "Team",
     description:
       "ChatGPT API를 활용한 신입 프론트엔드 개발자들의 기술 면접 연습 도우미",
-    image1: "/images/.png",
-    image2: "/images/.png",
+    image1: interviewImg1,
     githubUrl: "https://github.com/ydsic/my_interview_mate",
     liveUrl: "https://my-interview-mate.vercel.app/",
     skills: [

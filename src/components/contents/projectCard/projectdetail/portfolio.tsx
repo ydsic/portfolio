@@ -8,7 +8,7 @@ import { outerDiv } from "./projectDetailStyle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt, faX } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { skillIcons } from "../../../../constants/skillIcons";
 
 export default function PortfolioContents({
@@ -35,8 +35,23 @@ export default function PortfolioContents({
 
   const techSkills = ["React", "TypeScript", "TailwindCSS", "Github", "Vercel"];
 
+  const [imgModal, setImgModal] = useState<string | null>(null);
+
   return (
     <div className={outerDiv} onClick={handleOverlayClick}>
+      {/* 이미지 원본 모달 */}
+      {imgModal && (
+        <div
+          className="fixed inset-0 z-[11000] flex items-center justify-center bg-black bg-opacity-80"
+          onClick={() => setImgModal(null)}
+        >
+          <img
+            src={imgModal}
+            alt="원본 이미지"
+            className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl"
+          />
+        </div>
+      )}
       <div className="bg-[var(--sub-bg)] rounded-lg shadow-xl w-full max-w-6xl max-h-[80vh] overflow-y-auto">
         {/* Header */}
         <div className="sticky top-0 bg-[var(--sub-bg)] border-b border-[var(--border)] p-6 flex justify-between items-center rounded-t-lg">
@@ -90,7 +105,8 @@ export default function PortfolioContents({
             <img
               src="/images/portfolio1.png"
               alt="Portfolio 메인"
-              className="rounded-lg shadow-lg max-w-full h-auto"
+              className="rounded-lg shadow-lg max-w-full h-auto cursor-pointer"
+              onClick={() => setImgModal("/images/portfolio1.png")}
             />
           </div>
 
@@ -187,12 +203,14 @@ export default function PortfolioContents({
               <img
                 src="/images/portfolio1.png"
                 alt="Portfolio 화면 1"
-                className="rounded-lg shadow-lg w-full h-64 object-cover"
+                className="rounded-lg shadow-lg w-full h-64 object-cover cursor-pointer"
+                onClick={() => setImgModal("/images/portfolio1.png")}
               />
               <img
                 src="/images/portfolio2.png"
                 alt="Portfolio 화면 2"
-                className="rounded-lg shadow-lg w-full h-64 object-cover"
+                className="rounded-lg shadow-lg w-full h-64 object-cover cursor-pointer"
+                onClick={() => setImgModal("/images/portfolio2.png")}
               />
             </div>
           </section>

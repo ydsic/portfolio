@@ -28,6 +28,7 @@ import springIcon from "../assets/skillsimg/spring.svg";
 import mysqlIcon from "../assets/skillsimg/mysql.svg";
 import supabaseIcon from "../assets/skillsimg/supabase.svg";
 import openaiIcon from "../assets/skillsimg/openai.svg";
+import mongodbIcon from "../assets/skillsimg/mongodb.svg";
 
 export const skillIcons: Record<string, string> = {
   React: reactIcon,
@@ -60,4 +61,5 @@ export const skillIcons: Record<string, string> = {
   MySQL: mysqlIcon,
   Supabase: supabaseIcon,
   "OpenAI API": openaiIcon,
+  MongoDB: mongodbIcon,
 };

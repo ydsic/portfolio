@@ -7,8 +7,10 @@ type CloseModal = {
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt, faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { skillIcons } from "../../../../constants/skillIcons";
+import interviewImg1 from "../../../../assets/projectimg/interview1.png";
+import interviewImg2 from "../../../../assets/projectimg/interview2.png";
 
 export default function MyInterviewMate({
   onClose,
@@ -43,12 +45,27 @@ export default function MyInterviewMate({
     "OpenAI API",
   ];
 
+  const [imgModal, setImgModal] = useState<string | null>(null);
+
   return (
     <div
       className="fixed inset-0 flex justify-center items-center z-[10000] p-4 pt-[9vh]"
       onClick={handleOverlayClick}
       style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
     >
+      {/* 이미지 원본 모달 */}
+      {imgModal && (
+        <div
+          className="fixed inset-0 z-[11000] flex items-center justify-center bg-black bg-opacity-80"
+          onClick={() => setImgModal(null)}
+        >
+          <img
+            src={imgModal}
+            alt="원본 이미지"
+            className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl"
+          />
+        </div>
+      )}
       <div className="bg-[var(--sub-bg)] rounded-lg shadow-xl w-full max-w-6xl max-h-[80vh] overflow-y-auto">
         {/* Header */}
         <div className="sticky top-0 bg-[var(--sub-bg)] border-b border-[var(--border)] p-6 flex justify-between items-center rounded-t-lg">
@@ -95,9 +112,10 @@ export default function MyInterviewMate({
           {/* 메인 이미지 */}
           <div className="flex justify-center">
             <img
-              src="/images/my_interview_mate.png"
+              src={interviewImg1}
               alt="My Interview Mate 메인"
-              className="rounded-lg shadow-lg max-w-full h-auto"
+              className="rounded-lg shadow-lg max-w-full h-auto cursor-pointer"
+              onClick={() => setImgModal(interviewImg1)}
             />
           </div>
 
@@ -107,8 +125,9 @@ export default function MyInterviewMate({
               프로젝트 소개
             </h2>
             <p className="text-[var(--main-text)] leading-relaxed">
-              이 프로젝트는 신입 프론트엔드 개발자들이 기술 면접을 준비하는 데
-              도움을 주기 위해 개발되었습니다. ChatGPT API를 활용하여 다양한
+              나의 인터뷰 메이트는 신입 프론트엔드 개발자들이 기술 면접을
+              준비하는 데 도움을 주기 위해 개발되었습니다. ChatGPT API를
+              활용하여 실제 기술면접과 유사한 환경을 만들어서 제공하고 다양한
               기술 질문에 대한 답변을 연습할 수 있는 기능을 제공합니다.
             </p>
           </section>
@@ -236,14 +255,16 @@ export default function MyInterviewMate({
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               <img
-                src="/images/my_interview_mate_1.png"
+                src={interviewImg1}
                 alt="My Interview Mate 화면 1"
-                className="rounded-lg shadow-lg w-full h-64 object-cover"
+                className="rounded-lg shadow-lg w-full h-64 object-cover cursor-pointer"
+                onClick={() => setImgModal(interviewImg1)}
               />
               <img
-                src="/images/my_interview_mate_2.png"
+                src={interviewImg2}
                 alt="My Interview Mate 화면 2"
-                className="rounded-lg shadow-lg w-full h-64 object-cover"
+                className="rounded-lg shadow-lg w-full h-64 object-cover cursor-pointer"
+                onClick={() => setImgModal(interviewImg2)}
               />
             </div>
           </section>
