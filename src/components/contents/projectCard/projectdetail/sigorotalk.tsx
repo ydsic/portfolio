@@ -1,16 +1,16 @@
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExternalLinkAlt, faX } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
+import { skillIcons } from "../../../../constants/skillIcons";
+
 type CloseModal = {
   onClose: () => void;
   githubUrl?: string;
   liveUrl?: string;
 };
 
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faExternalLinkAlt, faX } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect } from "react";
-import { skillIcons } from "../../../../constants/skillIcons";
-
-export default function MyInterviewMate({
+export default function SigoroTalk({
   onClose,
   githubUrl,
   liveUrl,
@@ -37,9 +37,10 @@ export default function MyInterviewMate({
     "TypeScript",
     "TailwindCSS",
     "Zustand",
-    "Supabase",
+    "Spring",
+    "MySQL",
+    "Docker",
     "Github",
-    "Vercel",
     "OpenAI API",
   ];
 
@@ -54,7 +55,7 @@ export default function MyInterviewMate({
         <div className="sticky top-0 bg-[var(--sub-bg)] border-b border-[var(--border)] p-6 flex justify-between items-center rounded-t-lg">
           <div className="flex items-center gap-3">
             <h1 className="text-3xl font-bold text-[var(--main-text)]">
-              My Interview Mate
+              SigoroTalk
             </h1>
           </div>
           <div className="flex items-center gap-3">
@@ -90,13 +91,14 @@ export default function MyInterviewMate({
             </button>
           </div>
         </div>
+
         {/* Content */}
         <div className="p-6 space-y-8">
           {/* 메인 이미지 */}
           <div className="flex justify-center">
             <img
-              src="/images/my_interview_mate.png"
-              alt="My Interview Mate 메인"
+              src="/images/sigorotalk1.png"
+              alt="SigoroTalk 메인"
               className="rounded-lg shadow-lg max-w-full h-auto"
             />
           </div>
@@ -107,9 +109,8 @@ export default function MyInterviewMate({
               프로젝트 소개
             </h2>
             <p className="text-[var(--main-text)] leading-relaxed">
-              이 프로젝트는 신입 프론트엔드 개발자들이 기술 면접을 준비하는 데
-              도움을 주기 위해 개발되었습니다. ChatGPT API를 활용하여 다양한
-              기술 질문에 대한 답변을 연습할 수 있는 기능을 제공합니다.
+              인구 소멸 지역의 인구 유치 및 지역 발전을 위한 청년층과 노년층의
+              1:1 커피챗 플랫폼입니다.
             </p>
           </section>
 
@@ -195,35 +196,50 @@ export default function MyInterviewMate({
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-[var(--sub-bg2)] p-5 rounded-lg border border-[var(--border)]">
                 <h3 className="font-semibold text-[var(--main-text)] mb-3">
-                  이예도 - 팀장
+                  이영재 - 프로젝트 총괄, 백엔드 개발
                 </h3>
                 <ul className="text-[var(--sub-text)] space-y-2 text-sm">
-                  <li>• 프로젝트 전체 관리 및 개발 프로세스 총괄</li>
-                  <li>• CI/CD 파이프라인 구축 및 배포 자동화</li>
-                  <li>• 로그인/회원가입 기능 및 데이터베이스 설계</li>
-                  <li>• ChatGPT API 연동 및 면접 질문 생성 시스템 개발</li>
+                  <li>• 전체적인 일정 관리</li>
+                  <li>• AI 매칭 및 GPT 리포트 기능 개발</li>
                 </ul>
               </div>
               <div className="bg-[var(--sub-bg2)] p-5 rounded-lg border border-[var(--border)]">
                 <h3 className="font-semibold text-[var(--main-text)] mb-3">
-                  김호영 - 팀원
+                  조장호 - 백엔드 리드 개발
                 </h3>
                 <ul className="text-[var(--sub-text)] space-y-2 text-sm">
-                  <li>• 메인 페이지 핵심 기능 및 사용자 인터랙션 구현</li>
-                  <li>• 면접 질문/답변 관리 컴포넌트 구조화</li>
-                  <li>• 즐겨찾기 및 히스토리 기능 개발</li>
-                  <li>• 사용자 경험 향상을 위한 로딩 상태 최적화</li>
+                  <li>• API 서버 구축</li>
+                  <li>• JWT 기반 사용자 인증 시스템 개발</li>
+                  <li>• 커피챗 예약 기능 추가</li>
+                  <li>• 멘토 시스템 구축</li>
                 </ul>
               </div>
               <div className="bg-[var(--sub-bg2)] p-5 rounded-lg border border-[var(--border)]">
                 <h3 className="font-semibold text-[var(--main-text)] mb-3">
-                  정다정 - 팀원
+                  이예도 - 프론트엔드 팀장
                 </h3>
                 <ul className="text-[var(--sub-text)] space-y-2 text-sm">
-                  <li>• 전체 서비스 UI/UX 디자인 기획 및 구현</li>
-                  <li>• 메인화면 및 마이페이지 인터페이스 설계</li>
-                  <li>• 사용자 맞춤형 테마 기능 개발</li>
-                  <li>• 학습 진도 시각화 점수 대시보드 구현</li>
+                  <li>• UI 설계</li>
+                  <li>• 예약/채팅 화면 개발</li>
+                  <li>• 상태 관리 및 API 연동</li>
+                </ul>
+              </div>
+              <div className="bg-[var(--sub-bg2)] p-5 rounded-lg border border-[var(--border)]">
+                <h3 className="font-semibold text-[var(--main-text)] mb-3">
+                  문지현 - 프론트엔드 개발
+                </h3>
+                <ul className="text-[var(--sub-text)] space-y-2 text-sm">
+                  <li>• 전체적인 UI 구현</li>
+                  <li>• 각 연동된 API 데이터 처리</li>
+                </ul>
+              </div>
+              <div className="bg-[var(--sub-bg2)] p-5 rounded-lg border border-[var(--border)]">
+                <h3 className="font-semibold text-[var(--main-text)] mb-3">
+                  김지유 - UX 디자인
+                </h3>
+                <ul className="text-[var(--sub-text)] space-y-2 text-sm">
+                  <li>• 사용자 리서치 및 분석</li>
+                  <li>• 와이어프레임 및 프로토타입 제작</li>
                 </ul>
               </div>
             </div>
@@ -236,13 +252,13 @@ export default function MyInterviewMate({
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               <img
-                src="/images/my_interview_mate_1.png"
-                alt="My Interview Mate 화면 1"
+                src="/images/sigorotalk1.png"
+                alt="SigoroTalk 화면 1"
                 className="rounded-lg shadow-lg w-full h-64 object-cover"
               />
               <img
-                src="/images/my_interview_mate_2.png"
-                alt="My Interview Mate 화면 2"
+                src="/images/sigorotalk2.png"
+                alt="SigoroTalk 화면 2"
                 className="rounded-lg shadow-lg w-full h-64 object-cover"
               />
             </div>

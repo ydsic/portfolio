@@ -24,6 +24,10 @@ import gitlabIcon from "../assets/skillsimg/gitlab.svg";
 import nodejsIcon from "../assets/skillsimg/nodejs.svg";
 import githubActionsIcon from "../assets/skillsimg/githubactions.svg";
 import githubPagesIcon from "../assets/skillsimg/githubpages.svg";
+import springIcon from "../assets/skillsimg/spring.svg";
+import mysqlIcon from "../assets/skillsimg/mysql.svg";
+import supabaseIcon from "../assets/skillsimg/supabase.svg";
+import openaiIcon from "../assets/skillsimg/openai.svg";
 
 export const skillIcons: Record<string, string> = {
   React: reactIcon,
@@ -52,4 +56,8 @@ export const skillIcons: Record<string, string> = {
   "Node.js": nodejsIcon,
   Github_Actions: githubActionsIcon,
   Github_Pages: githubPagesIcon,
+  Spring: springIcon,
+  MySQL: mysqlIcon,
+  Supabase: supabaseIcon,
+  "OpenAI API": openaiIcon,
 };

@@ -9,6 +9,7 @@ import { faFolderOpen } from "@fortawesome/free-solid-svg-icons";
 import RiotGames from "./projectCard/projectdetail/riotgames";
 import "./Projects.css";
 import MyInterviewMate from "./projectCard/projectdetail/my_interview_mate";
+import SigoroTalk from "./projectCard/projectdetail/sigorotalk";
 
 export default function Projects() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -37,7 +38,13 @@ export default function Projects() {
           />
         );
       case 2:
-        return null;
+        return (
+          <SigoroTalk
+            onClose={closeDetail}
+            githubUrl={project.githubUrl}
+            liveUrl={project.liveUrl}
+          />
+        );
       case 3:
         return null;
       case 4:
